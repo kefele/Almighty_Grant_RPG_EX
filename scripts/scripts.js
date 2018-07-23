@@ -2,38 +2,54 @@
 
 
 let userHealth = 40;
-let grantHealth =10;
-let win =0;
-let userName = prompt(`Please Enter Your Name!`)
+let grantHealth = 10;
+let win = 0;
 
- 
-do{
-    let grantAttack= Math.floor(Math.random() * 2) +1;
-    let userAttack = Math.floor(Math.random() * 2) +1;
-    console.log(`Grants heath is ${grantHealth}`);
-    console.log(`${userName}'s health is ${userHealth}`);
-    userHealth -= grantAttack;
-    grantHealth -=userAttack;
+let select = prompt(`Do You Have The Courage To Battle The Amighty Grant? (y/n?)`);
+;
 
-    if(grantHealth <=0){
-        grantHealth =10;
-        win++;
-    }
-    else if(userHealth <= 0){
-        console.log(`The Almighty Grant Has Defeated You`)
+switch (select.toLocaleLowerCase()) {
+    // (select.includes(`n`) )
+    // (select.includes(`y`))
+    case "n": 
+        console.log(`Coward!!! Return When You Have Found Your Spine!`);
         break;
-    }
+    
+    case "y":  
+        let userName = prompt(`Please Enter Your Name!`)
+           
 
-     if(win==3){
-        console.log(`Victory Is Your's!!! ${userName} Has Defeated The Almighty Grant!!!`)
-        break;
-    }
-   
+        do {
+            let grantAttack = Math.floor(Math.random() * 2) + 1;
+            let userAttack = Math.floor(Math.random() * 2) + 1;
+            console.log(`Grants heath is ${grantHealth}`);
+            console.log(`${userName}'s health is ${userHealth}`);
+            userHealth -= grantAttack;
+            grantHealth -= userAttack;
+
+            if (grantHealth <= 0) {
+                grantHealth = 10;
+                win++;
+            }
+            else if (userHealth <= 0) {
+                console.log(`The Almighty Grant Has Defeated You`)
+                break;
+            }
+
+            if (win == 3) {
+                console.log(`Victory Is Your's!!! ${userName} Has Defeated The Almighty Grant!!!`)
+                break;
+            }
+
+
+
+        }
     
 
-}
-while(win<=3);
 
+
+    while (win <= 3);
+    }
 // let i = 10;
 
 // do{
