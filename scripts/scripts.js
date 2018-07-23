@@ -3,6 +3,7 @@
 
 let userHealth = 40;
 let grantHealth =10;
+let win =0;
 
  
 do{
@@ -13,8 +14,24 @@ do{
     userHealth -= grantAttack;
     grantHealth -=userAttack;
 
+    if(grantHealth <=0){
+        grantHealth =10;
+        win++;
+    }
+    else if(userHealth <= 0){
+        console.log(`The Almighty Grant Has Defeated You`)
+        break;
+    }
+
+     if(win==3){
+        console.log(`You Have Defeated The Almighty Grant`)
+        break;
+    }
+   
+    
+
 }
-while(userHealth!=0);
+while(win<=3);
 
 // let i = 10;
 
