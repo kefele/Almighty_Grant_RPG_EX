@@ -4,13 +4,14 @@
 let userHealth = 40;
 let grantHealth =10;
 let win =0;
+let userName = prompt(`Please Enter Your Name!`)
 
  
 do{
     let grantAttack= Math.floor(Math.random() * 2) +1;
     let userAttack = Math.floor(Math.random() * 2) +1;
     console.log(`Grants heath is ${grantHealth}`);
-    console.log(`user health is ${userHealth}`);
+    console.log(`${userName}'s health is ${userHealth}`);
     userHealth -= grantAttack;
     grantHealth -=userAttack;
 
@@ -24,7 +25,7 @@ do{
     }
 
      if(win==3){
-        console.log(`You Have Defeated The Almighty Grant`)
+        console.log(`Victory Is Your's!!! ${userName} Has Defeated The Almighty Grant!!!`)
         break;
     }
    
