@@ -5,6 +5,9 @@ let userHealth = 40;
 let grantHealth = 10;
 let win = 0;
 
+startGame();
+
+function startGame(){
 let select = prompt(`Do You Have The Courage To Battle The Amighty Grant? (y/n?)`);
 ;
 
@@ -15,17 +18,43 @@ switch (select.toLocaleLowerCase()) {
         console.log(`Coward!!! Return When You Have Found Your Spine!`);
         break;
     
-    case "y":  
+    case "y":  startCombat();
+}
+    function startCombat(){
         let userName = prompt(`Please Enter Your Name!`)
            
+       
+        function getDamage(){
 
-        do {
-            let grantAttack = Math.floor(Math.random() * 2) + 1;
-            let userAttack = Math.floor(Math.random() * 2) + 1;
-            console.log(`Grants heath is ${grantHealth}`);
-            console.log(`${userName}'s health is ${userHealth}`);
-            userHealth -= grantAttack;
-            grantHealth -= userAttack;
+            userHealth -= Math.floor(Math.random() * 5) + 1;
+            grantHealth -= Math.floor(Math.random() * 5) + 1;
+            console.log(`${userName}'s heath is ${userHealth}`);
+            console.log(`Almight Grant's Health is ${grantHealth}`);
+        }
+        
+
+        // do 
+         while (win <= 3){
+            let fightOrFly = prompt(`Would You Like To Attack Or Flee? (A/F)`) 
+            if (fightOrFly.toLocaleLowerCase()==="f") {
+                // (select.includes(`n`) )
+                // (select.includes(`y`))
+                 
+                    console.log(`Coward!!! Return When You Have Found Your Spine!`);
+                    break;
+            }
+             if(fightOrFly.toLocaleLowerCase()==="a") {  
+                 getDamage();
+            }
+                
+
+            getDamage();
+            // let grantAttack = Math.floor(Math.random() * 2) + 1;
+            // let userAttack = Math.floor(Math.random() * 2) + 1;
+            // console.log(`Almighty Grant's heath is ${grantHealth}`);
+            // console.log(`${userName}'s health is ${userHealth}`);
+            // userHealth -= grantAttack;
+            // grantHealth -= userAttack;
 
             if (grantHealth <= 0) {
                 grantHealth = 10;
@@ -47,9 +76,10 @@ switch (select.toLocaleLowerCase()) {
     
 
 
-
-    while (win <= 3);
     }
+}
+    // while (win <= 3);
+    
 // let i = 10;
 
 // do{
