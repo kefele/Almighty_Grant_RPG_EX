@@ -7,58 +7,45 @@ let win = 0;
 
 startGame();
 
-function startGame(){
-let select = prompt(`Do You Have The Courage To Battle The Amighty Grant? (y/n?)`);
-;
+function startGame() {
+    let select = prompt(`Do You Have The Courage To Battle The Amighty Grant? (y/n?)`);
+    ;
 
-switch (select.toLocaleLowerCase()) {
-    // (select.includes(`n`) )
-    // (select.includes(`y`))
-    case "n": 
-        console.log(`Coward!!! Return When You Have Found Your Spine!`);
-        break;
-    
-    case "y":  startCombat();
-}
-    function startCombat(){
+    switch (select.toLocaleLowerCase()) {
+
+        case "n":
+            console.log(`Coward!!! Return When You Have Found Your Spine!`);
+            break;
+
+        case "y": startCombat();
+    }
+    function startCombat() {
         let userName = prompt(`Please Enter Your Name!`)
-           
-       
-        function getDamage(){
+
+        function getDamage() {
 
             userHealth -= Math.floor(Math.random() * 5) + 1;
             grantHealth -= Math.floor(Math.random() * 5) + 1;
             console.log(`${userName}'s heath is ${userHealth}`);
             console.log(`Almight Grant's Health is ${grantHealth}`);
         }
-        
 
-        // do 
-         while (win <= 3){
-            let fightOrFly = prompt(`Would You Like To Attack Or Flee? (A/F)`) 
-            if (fightOrFly.toLocaleLowerCase()==="f") {
-                // (select.includes(`n`) )
-                // (select.includes(`y`))
-                 
-                    console.log(`Coward!!! Return When You Have Found Your Spine!`);
-                    break;
-            }
-             if(fightOrFly.toLocaleLowerCase()==="a") {  
-                 getDamage();
-            }
-                
+        while (win <= 3) {
+            let fightOrFly = prompt(`Would You Like To Attack Or Flee? (A/F)`)
+            if (fightOrFly.toLocaleLowerCase() === "f") {
 
-            getDamage();
-            // let grantAttack = Math.floor(Math.random() * 2) + 1;
-            // let userAttack = Math.floor(Math.random() * 2) + 1;
-            // console.log(`Almighty Grant's heath is ${grantHealth}`);
-            // console.log(`${userName}'s health is ${userHealth}`);
-            // userHealth -= grantAttack;
-            // grantHealth -= userAttack;
+                console.log(`Coward!!! Return When You Have Found Your Spine!`);
+                break;
+            }
+            if (fightOrFly.toLocaleLowerCase() === "a") {
+                getDamage();
+            }
 
             if (grantHealth <= 0) {
-                grantHealth = 10;
+
                 win++;
+                console.log(`${userName}You Have Bested The Almighty Grant ${win} Time(s)!!`)
+                grantHealth = 10;
             }
             else if (userHealth <= 0) {
                 console.log(`The Almighty Grant Has Defeated You`)
@@ -70,84 +57,7 @@ switch (select.toLocaleLowerCase()) {
                 break;
             }
 
-
-
         }
-    
-
 
     }
 }
-    // while (win <= 3);
-    
-// let i = 10;
-
-// do{
-//     console.log(`You are ${i} years old!`);
-//     i++;
-//     if(i==18){
-//     console.log(`you are an adult`) 
-//     }
-// }
-// while(i!=18);
-
-
-
-// let i = 10;
-// while (i<=30){
-//     console.log(`You are ${i} years old!`);
-//     i++;
-//     if(i==18){
-//         console.log(`You are legally an adult!`);
-//         break;
-//     }
-// }
-
-// let i = 1;
-// while (i<=10){
-//     console.log(i);
-//     i++;
-// }
-
-// for(let i = 1; i <=20; i++){
-//     if(i % 2 == 0){
-//         console.log(i);
-//     }
-// }
-
-// const dayOfWeek = prompt("What day is it");
-// console.log(dayOfWeek);
-// switch (dayOfWeek.toLowerCase()){
-//     case "monday":
-//       document.write("Today is Monday");
-//       break;
-
-//     case "saturday":
-//       document.write("Party time!!");
-//       break;
-//     default:
-//     document.write(`${dayOfWeek} is not recognized.`);
-//     break;
-
-
-
-// }
-
-// const name = "Porkchop";
-// const age = 23;
-
-// if (name === "Scooby" || name === "Snoopy"){
-//     console.log("We found a match.");
-// }
-
-
-// if (name === "Snoopy"){
-//     console.log("The name is Snoopy");
-
-// }
-// else if (name === "Scooby"){
-//     console.log("The name is Scooby")
-// }
-// else {
-//     console.log("The name does not match anything in our system");
-// }
